@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook API</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<style type="text/css">
+	
+      
+		.menu {
+			padding: 5%;
+			text-align: center;
+		}
+		.button {
+			border: 2px solid black;
+			color: #000;
+			background-color: transparent;
+		}
+		#token {
+			width: 100%;
+		}
+		#submitButton {
+		}
+	</style>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Graph API</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      </ul>
+    </div>
+  </nav>
+
+  	<div class="container">
+  	<div class="row menu">
+  	<div class="col s12">
+  	<p class="flow-text">Facebook Graph API</p>
+  	<a class="waves-effect waves-light btn button" href="https://developers.facebook.com/tools/explorer/145634995501895/#" target="_blank">Get Facebook Token</a>
+  	</div>
+  	<div class="col s12">
+  	<div class="section"></div>
+  	<div class="section"></div>
+  	Already have it? Enter it below
+  	</div>
+  	<div class="col s12">
+  	<input type="text" id="token">
+  	</div>
+  	<div class="col s12">
+  	<a class="waves-effect waves-light btn button" id="submitButton">Submit</a>
+  	</div>
+  </div>
+  </div>
+
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+            © 2017 Nitin Shokeen
+            </div>
+          </div>
+        </footer>
+        
+	
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$(".button-collapse").sideNav();   
+		$("#token").change(function(){
+        $("#submitButton").attr("href", "profile.html?token="+ $("#token").val());
+    });
+
+		$("#submitButton").click(function(){
+			if ($("#token").val()=="") {
+				alert("enter token");
+			}
+			else {
+				$("#submitButton").attr("href", "profile.html?token="+ $("#token").val());
+			}
+		});
+    }); 
+</script>
+</html>

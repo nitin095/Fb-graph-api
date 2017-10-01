@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <style type="text/css">
+  body {
+  		background-color: #eeeeee;
+  	}
+  	#imageContainer {
+  		position: relative;
+  	}
+  	#coverPic {
+  
+  	}
+	#profilePic {
+		position: absolute;
+		bottom: -50px;
+		left: 38%;
+    	border: 4px solid white;
+
+	}
+	#coverName {
+		position: relative;
+		bottom: -10px;	
+	}
+	.padding {
+  		padding: 20%;
+  	}
+	</style>
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">Graph API</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a class="profileLink">Profile</a></li>
+        <li><a class="feedLink">Feed</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      	<li><a href="index.html">Home</a></li>
+        <li class="active"><a class="profileLink">Profile</a></li>
+        <li><a class="feedLink">Feed</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container" id="imageContainer" align="center">
+			<img class="materialboxed responsive-img" id="coverPic">
+			<img class="materialboxed responsive-img" id="profilePic">
+	</div>
+	<br>
+	<h3 class="name" id="coverName" align="center"></h3>
+	<div class="divider"></div>		
+
+<div align="center" class="container padding">
+<div class="loader preloader-wrapper big active">
+    <div class="spinner-layer spinner-red-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  </div><!-- end loader container-->  
+	<div class="container">
+		<div class="row card-panel" id="data">
+		<div class="col hide-on-med-and-down m3"> <!-- column 1-->
+			<ul class="table-of-contents">
+        		<li><a href="#overviewData" class="collection-item active" id="overview">Overview</a></li>
+        		<li><a href="#workAndEducationData" class="collection-item" id="workAndEducation">Work and education</a></li>
+        		<li><a href="#basicInfoData" class="collection-item" id="basicInfo">Basic Info</a></li>
+        		<li><a href="#relationshipData" class="collection-item" id="relationship">Family and relationship</a></li>
+      		</ul>
+		</div><!-- end column 1-->
+		<div class="col hide-on-large-only">
+		<ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3"><a class="active" href="#overviewData">Overview</a></li>
+    <li class="tab col s3"><a href="#workAndEducationData">Work &#38; Education</a></li>
+    <li class="tab col s3"><a href="#basicInfoData">Basic Info</a></li>
+    <li class="tab col s3"><a href="#relationshipData">Family &#38; relationship</a></li>
+  </ul>
+  </div>
+		<div class="col s9"><!-- column 2-->
+			<div class="row" id="overviewData"><!--column 2 row overview-->
+			<div class="section">
+					<blockquote><p class="flow-text">Overview</p></blockquote>
+					<hr>
+				</div>
+			<div class="section name">Name </div>
+			<div class="section" id="email"></div>
+			<div class="section" id="age"></div>
+			<div class="section" id="hometown"></div>
+			<div class="section" id="profileID"></div>
+			</div><!--end column 2 row overview-->
+			<div class="row" id="workAndEducationData"><!--column 2 row workAndEducationData-->
+				<div class="section">
+					<blockquote><p class="flow-text">Education</p></blockquote>
+					<hr>
+				</div>
+				<div class="section college">
+				</div>
+				<div class="divider"></div>
+				<div class="section highSchool">
+				</div>
+			</div><!--end column 2 row workAndEducationData-->
+			<div class="row" id="basicInfoData"><!--column 2 row basicInfo-->
+				<div class="section">
+					<blockquote><p class="flow-text">Basic Information</p></blockquote>
+					<hr>
+				</div>
+				<div class="section birthdayAndGender">
+				</div>
+			</div><!--end column 2 row basicInfo-->
+			<div class="row" id="relationshipData">
+				<div class="section">
+					<blockquote><p class="flow-text">Relationship</p></blockquote>
+					<hr>
+				</div>
+				<div class="section relationshipStatus">
+				</div>
+			</div> 
+			</div><!-- end column 2-->
+		</div><!-- end row-->
+	</div> <!-- end container--> 
+
+	<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="text-align: center;">
+            © 2017 Nitin Shokeen
+            </div>
+          </div>
+        </footer>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#data').hide();
+		$(".button-collapse").sideNav();
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
+
+	var token = $.urlParam('token');
+	$(".profileLink").attr("href","profile.html?token="+token);
+	$(".feedLink").attr("href","feed.html?token="+token); 
+	var pictureLink;
+	var coverLink;
+	getinfo();
+	$( "#basicInfoData").hide();
+      	$("#workAndEducationData").hide();
+      	$("#relationshipData").hide();
+	$("#overview").on( "click", function() {
+    	$("#overviewData").slideDown( 800 );
+      	$( "#basicInfoData").slideUp( 800 );
+      	$("#workAndEducationData").slideUp( 800 );
+      	$("#relationshipData").slideUp( 800 );
+      	$("#basicInfo").removeClass("active");
+      	$("#overview").addClass("active");
+     	$("#workAndEducation").removeClass("active");
+     	$("#relationship").removeClass("active");
+    });
+	$("#workAndEducation").on( "click", function() {
+      	$("#overviewData").slideUp( 800 );
+      	$( "#basicInfoData").slideUp( 800 );
+      	$("#relationshipData").slideUp( 800 );
+      	$("#workAndEducationData").slideDown( 600 );
+      	$("#basicInfo").removeClass("active");
+      	$("#overview").removeClass("active");
+     	$("#workAndEducation").addClass("active");
+     	$("#relationship").removeClass("active");
+    });
+    $("#basicInfo").on( "click", function() {
+    	$("#overviewData").slideUp( 800 );
+      	$( "#basicInfoData").slideDown( 800 );
+      	$("#workAndEducationData").slideUp( 800 );
+      	$("#relationshipData").slideUp( 800 );
+      	$("#basicInfo").addClass("active");
+      	$("#overview").removeClass("active");
+     	$("#workAndEducation").removeClass("active");
+     	$("#relationship").removeClass("active");
+    });
+    $("#relationship").on( "click", function() {
+    	$("#overviewData").slideUp( 800 );
+      	$( "#basicInfoData").slideUp( 800 );
+      	$("#workAndEducationData").slideUp( 800 );
+      	$("#relationshipData").slideDown( 800 );
+      	$("#basicInfo").removeClass("active");
+      	$("#overview").removeClass("active");
+     	$("#workAndEducation").removeClass("active");
+     	$("#relationship").addClass("active");
+    });
+
+    function getinfo(){ 
+                      $.ajax('https://graph.facebook.com/me?fields=id,name,hometown,age_range,email,about,relationship_status,birthday,gender,education,cover&&access_token='+token,{ 
+       	            
+
+       	                       success : function(response){ 
+                               console.log(typeof(response)); 
+                               $(".name").text(response.name); 
+                               $("#email").text("E-mail "+response.email); 
+                               $("#profileID").html('Profile-Id <a target="blank" href="https://facebook.com/'+response.id+'">https://facebook.com/'+response.id+'</a>'); 
+                               $("#hometown").text("Hometown "+response.hometown.name); 
+                               $("#age").text("Age "+response.age_range.min); 
+                               $('.relationshipStatus').text(response.relationship_status);
+                               $('.birthdayAndGender').html(response.birthday+"<br>"+response.gender);
+                               console.log(response.education[1].concentration[0].name);
+                               educationInfo(response.education);
+                 				pictureLink = "http://graph.facebook.com/"+response.id+"/picture?type=large";
+                               coverLink = response.cover.source;
+                              	},//end sucess 
+                               error : function(request,errorType,errorMessage){ 
+                               console.log(request); 
+                               console.log(errorType); 
+                               alert(errorMessage); 
+                               alert("API is down. Please try again later."); 
+                               },//end error 
+
+                               timeout:5000, 
+
+                               beforeSend : function(){ 
+
+                               $('.loader').show(); 
+
+                               },//end beforeSend 
+
+                              complete : function(){ 
+
+                              $('.loader').hide();
+                              $('.padding').removeClass("padding");
+                              $('#data').show();
+            					$("#coverPic").attr("src",coverLink);
+            					$("#profilePic").attr("src",pictureLink);
+
+                               } //end complete 
+
+
+                  }); //end ajax
+                       } //end getInfo
+
+              function educationInfo(array) {
+              	var college,highSchool;
+              	for (x in array) {
+              		if (array[x].type == "High School") {
+              			highSchool = array[x].school.name + "<br>";
+              			$('.highSchool').append(highSchool);
+              		}
+              		if (array[x].type == "College") {
+              			college = array[x].school.name + "<br>" + array[x].concentration[0].name + "<br>";
+              			$('.college').append(college);
+              		}
+              	}
+              };
+	});
+
+
+</script>
+</html>
