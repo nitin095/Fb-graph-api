@@ -4,7 +4,7 @@
 	<title>Facebook API</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -28,6 +28,15 @@
 		}
 		#submitButton {
 		}
+		ul#connect li {
+    display:inline;
+     padding: 8px;
+}
+ul#connect li:hover,
+ul#connect li:focus,
+ul#connect li:active {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
 	</style>
 </head>
 <body>
@@ -45,7 +54,7 @@
   	<div class="row menu">
   	<div class="col s12">
   	<p class="flow-text">Facebook Graph API</p>
-  	<a class="waves-effect waves-light btn button" href="https://developers.facebook.com/tools/explorer/145634995501895/#" target="_blank">Get Facebook Token</a>
+  	<a class="waves-effect waves-light btn button" href="https://developers.facebook.com/tools/explorer" target="_blank">Get Facebook Token</a>
   	</div>
   	<div class="col s12">
   	<div class="section"></div>
@@ -65,17 +74,17 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Facebook Graph API Explorer</h5>
+                <p class="grey-text text-lighten-4">Test, create, and authenticate API calls and debug responses.<a href="https://developers.facebook.com/tools/explorer">Open website</a></p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                <h5 class="white-text">Connect</h5>
+                <ul id="connect">
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nitinshokeen9"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/nitin095"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://plus.google.com/u/0/104032080224503849383"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></li>
                 </ul>
+                <p><a class="grey-text text-lighten-3"><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;nitinshokeen9@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -97,7 +106,7 @@
 
 		$("#submitButton").click(function(){
 			if ($("#token").val()=="") {
-				alert("enter token");
+				 Materialize.toast('Enter access token!', 3000)
 			}
 			else {
 				$("#submitButton").attr("href", "profile.html?token="+ $("#token").val());

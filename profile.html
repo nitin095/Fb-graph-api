@@ -4,6 +4,7 @@
 	<title>Profile</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0\css\font-awesome.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -14,22 +15,31 @@
   body {
   		background-color: #eeeeee;
   	}
+  	ul#connect li {
+    display:inline;
+     padding: 8px;
+}
+ul#connect li:hover,
+ul#connect li:focus,
+ul#connect li:active {
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
   	#imageContainer {
   		position: relative;
+  		margin-bottom: auto;
   	}
   	#coverPic {
-  
+  		width: 849px;
+  		height: 313px;
+  		object-fit: cover;
   	}
-	#profilePic {
+  	.profilePicContainer {
+		min-width: 100%;
 		position: absolute;
-		bottom: -50px;
-		left: 38%;
-    	border: 4px solid white;
-
+		bottom: -30%;
 	}
-	#coverName {
-		position: relative;
-		bottom: -10px;	
+	.profilePic {
+		border: 4px solid white;
 	}
 	.padding {
   		padding: 20%;
@@ -52,15 +62,7 @@
       </ul>
     </div>
   </nav>
-  <div class="container" id="imageContainer" align="center">
-			<img class="materialboxed responsive-img" id="coverPic">
-			<img class="materialboxed responsive-img" id="profilePic">
-	</div>
-	<br>
-	<h3 class="name" id="coverName" align="center"></h3>
-	<div class="divider"></div>		
-
-<div align="center" class="container padding">
+  <div align="center" class="container padding">
 <div class="loader preloader-wrapper big active">
     <div class="spinner-layer spinner-red-only">
       <div class="circle-clipper left">
@@ -73,37 +75,84 @@
     </div>
   </div>
   </div><!-- end loader container-->  
+  <div class="container" id="imageContainer" align="center">
+			<img class="materialboxed responsive-img" id="coverPic">
+			<div class="profilePicContainer">
+			<img class="materialboxed responsive-img profilePic hide-on-small-only">
+			<img class="materialboxed responsive-img circle profilePic hide-on-med-and-up">
+			</div>
+	</div>
+	<br><br><br><br>
+	<h3 class="name" id="coverName" align="center"></h3>
+	<div class="divider"></div>		
+
 	<div class="container">
-		<div class="row card-panel" id="data">
+		<div class="row card-panel">
 		<div class="col hide-on-med-and-down m3"> <!-- column 1-->
 			<ul class="table-of-contents">
         		<li><a href="#overviewData" class="collection-item active" id="overview">Overview</a></li>
         		<li><a href="#workAndEducationData" class="collection-item" id="workAndEducation">Work and education</a></li>
         		<li><a href="#basicInfoData" class="collection-item" id="basicInfo">Basic Info</a></li>
-        		<li><a href="#relationshipData" class="collection-item" id="relationship">Family and relationship</a></li>
+        		<li><a href="#relationshipData" class="collection-item" id="relationship">Relationship</a></li>
       		</ul>
 		</div><!-- end column 1-->
-		<div class="col hide-on-large-only">
+		<div class="col s12 hide-on-large-only hide-on-small-only">
 		<ul id="tabs-swipe-demo" class="tabs">
     <li class="tab col s3"><a class="active" href="#overviewData">Overview</a></li>
     <li class="tab col s3"><a href="#workAndEducationData">Work &#38; Education</a></li>
     <li class="tab col s3"><a href="#basicInfoData">Basic Info</a></li>
-    <li class="tab col s3"><a href="#relationshipData">Family &#38; relationship</a></li>
+    <li class="tab col s3"><a href="#relationshipData">Relationship</a></li>
   </ul>
   </div>
+  <div>
+  <ul class="collapsible hide-on-med-and-up" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active flow-text"><blockquote>Overview</blockquote></div>
+      <div class="collapsible-body"><div class="section name">Name </div>
+			<div class="section email"></div>
+			<div class="section age"></div>
+			<div class="section hometown"></div>
+			<div class="section profileID"></div></div>
+    </li>
+    <li>
+      <div class="collapsible-header flow-text"><blockquote>Work &#38; Education</blockquote></div>
+      <div class="collapsible-body"><div class="section college">
+				</div>
+				<div class="divider"></div>
+				<div class="section highSchool">
+				</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header flow-text"><blockquote>Basic info</blockquote></div>
+      <div class="collapsible-body"><div class="section birthdayAndGender">
+				</div></div>
+    </li>
+    <li>
+      <div class="collapsible-header flow-text"><blockquote>Relationship</blockquote></div>
+      <div class="collapsible-body"><div class="section relationshipStatus">
+				</div></div>
+    </li>
+  </ul>
+  </div>
+        
 		<div class="col s9"><!-- column 2-->
-			<div class="row" id="overviewData"><!--column 2 row overview-->
+			<div class="row hide-on-small-only" id="overviewData"><!--column 2 row overview-->
 			<div class="section">
 					<blockquote><p class="flow-text">Overview</p></blockquote>
 					<hr>
 				</div>
-			<div class="section name">Name </div>
-			<div class="section" id="email"></div>
-			<div class="section" id="age"></div>
-			<div class="section" id="hometown"></div>
-			<div class="section" id="profileID"></div>
+			<div class="col l7">
+			<div class="section"><b>Name</b>&ensp;<span class="name"></span> </div>
+			<div class="section age"></div>
+			<div class="section profileID"></div>
+			</div>
+			<div class="col l5">
+			<div class="section hometown"></div>
+			<div class="section email"></div>
+			<div class="section bDay"></div>
+			</div>
 			</div><!--end column 2 row overview-->
-			<div class="row" id="workAndEducationData"><!--column 2 row workAndEducationData-->
+			<div class="row hide-on-small-only" id="workAndEducationData"><!--column 2 row workAndEducationData-->
 				<div class="section">
 					<blockquote><p class="flow-text">Education</p></blockquote>
 					<hr>
@@ -114,15 +163,21 @@
 				<div class="section highSchool">
 				</div>
 			</div><!--end column 2 row workAndEducationData-->
-			<div class="row" id="basicInfoData"><!--column 2 row basicInfo-->
+			<div class="row hide-on-small-only" id="basicInfoData"><!--column 2 row basicInfo-->
 				<div class="section">
 					<blockquote><p class="flow-text">Basic Information</p></blockquote>
 					<hr>
 				</div>
-				<div class="section birthdayAndGender">
+				<div class="col l4">
+					<div class="section"><b>Date of birth</b></div>
+					<div class="section"><b>Gender</b></div>
+				</div>
+				<div>
+					<div class="section dob"></div>
+					<div class="section gender"></div>
 				</div>
 			</div><!--end column 2 row basicInfo-->
-			<div class="row" id="relationshipData">
+			<div class="row hide-on-small-only" id="relationshipData">
 				<div class="section">
 					<blockquote><p class="flow-text">Relationship</p></blockquote>
 					<hr>
@@ -138,17 +193,17 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Facebook Graph API Explorer</h5>
+                <p class="grey-text text-lighten-4">Test, create, and authenticate API calls and debug responses.<a href="https://developers.facebook.com/tools/explorer">Open website</a></p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                <h5 class="white-text">Connect</h5>
+                <ul id="connect">
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/nitinshokeen9"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/nitin095"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://plus.google.com/u/0/104032080224503849383"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a></li>
                 </ul>
+                <p><a class="grey-text text-lighten-3"><i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;nitinshokeen9@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -161,7 +216,7 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#data').hide();
+		$('.container').hide();
 		$(".button-collapse").sideNav();
 $.urlParam = function(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -182,17 +237,20 @@ $.urlParam = function(name){
 	$( "#basicInfoData").hide();
       	$("#workAndEducationData").hide();
       	$("#relationshipData").hide();
+
 	$("#overview").on( "click", function() {
-    	$("#overviewData").slideDown( 800 );
+		event.preventDefault();
       	$( "#basicInfoData").slideUp( 800 );
       	$("#workAndEducationData").slideUp( 800 );
       	$("#relationshipData").slideUp( 800 );
+      	$("#overviewData").slideDown( 800 );
       	$("#basicInfo").removeClass("active");
       	$("#overview").addClass("active");
      	$("#workAndEducation").removeClass("active");
      	$("#relationship").removeClass("active");
     });
 	$("#workAndEducation").on( "click", function() {
+		event.preventDefault();
       	$("#overviewData").slideUp( 800 );
       	$( "#basicInfoData").slideUp( 800 );
       	$("#relationshipData").slideUp( 800 );
@@ -203,18 +261,20 @@ $.urlParam = function(name){
      	$("#relationship").removeClass("active");
     });
     $("#basicInfo").on( "click", function() {
+    	event.preventDefault();
     	$("#overviewData").slideUp( 800 );
-      	$( "#basicInfoData").slideDown( 800 );
       	$("#workAndEducationData").slideUp( 800 );
       	$("#relationshipData").slideUp( 800 );
+      	$( "#basicInfoData").slideDown( 800 );
       	$("#basicInfo").addClass("active");
       	$("#overview").removeClass("active");
      	$("#workAndEducation").removeClass("active");
      	$("#relationship").removeClass("active");
     });
     $("#relationship").on( "click", function() {
+    	event.preventDefault();
     	$("#overviewData").slideUp( 800 );
-      	$( "#basicInfoData").slideUp( 800 );
+      	$("#basicInfoData").slideUp( 800 );
       	$("#workAndEducationData").slideUp( 800 );
       	$("#relationshipData").slideDown( 800 );
       	$("#basicInfo").removeClass("active");
@@ -230,12 +290,14 @@ $.urlParam = function(name){
        	                       success : function(response){ 
                                console.log(typeof(response)); 
                                $(".name").text(response.name); 
-                               $("#email").text("E-mail "+response.email); 
-                               $("#profileID").html('Profile-Id <a target="blank" href="https://facebook.com/'+response.id+'">https://facebook.com/'+response.id+'</a>'); 
-                               $("#hometown").text("Hometown "+response.hometown.name); 
-                               $("#age").text("Age "+response.age_range.min); 
-                               $('.relationshipStatus').text(response.relationship_status);
-                               $('.birthdayAndGender').html(response.birthday+"<br>"+response.gender);
+                               $(".email").html('<i class="fa fa-envelope-o" aria-hidden="true"></i>&ensp;'+response.email); 
+                               $(".profileID").html('<b>Profile Link</b>&ensp; <a target="blank" href="https://facebook.com/'+response.id+'">https://facebook.com/'+response.id+'</a>'); 
+                               $(".hometown").html('<i class="fa fa-map-marker" aria-hidden="true"></i>&ensp;'+response.hometown.name);
+                               $(".bDay").html('<i class="fa fa-birthday-cake" aria-hidden="true"></i>&ensp;'+response.birthday); 
+                               $(".age").html("<b>Age</b>&ensp;"+response.age_range.min); 
+                               $('.relationshipStatus').html('<i class="fa fa-heart-o" aria-hidden="true"></i>&ensp;'+response.relationship_status);
+                               $('.dob').text(response.birthday);
+                               $('.gender').text(response.gender);
                                console.log(response.education[1].concentration[0].name);
                                educationInfo(response.education);
                  				pictureLink = "http://graph.facebook.com/"+response.id+"/picture?type=large";
@@ -244,8 +306,10 @@ $.urlParam = function(name){
                                error : function(request,errorType,errorMessage){ 
                                console.log(request); 
                                console.log(errorType); 
-                               alert(errorMessage); 
-                               alert("API is down. Please try again later."); 
+                               Materialize.toast(errorMessage, 3000); 
+                               Materialize.toast("Invalid access token.");
+                                var $toastContent = $('<span>Please try again.</span>').add($('<button class="btn-flat toast-action"><a href="index.html">Retry</a></button>'));
+                                Materialize.toast($toastContent);
                                },//end error 
 
                                timeout:5000, 
@@ -260,9 +324,9 @@ $.urlParam = function(name){
 
                               $('.loader').hide();
                               $('.padding').removeClass("padding");
-                              $('#data').show();
+                              $('.container').show();
             					$("#coverPic").attr("src",coverLink);
-            					$("#profilePic").attr("src",pictureLink);
+            					$(".profilePic").attr("src",pictureLink);
 
                                } //end complete 
 
