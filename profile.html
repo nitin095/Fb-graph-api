@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav><!--end nav bar-->
     <div align="center" class="container padding">
         <div class="loader preloader-wrapper big active">
             <div class="spinner-layer spinner-red-only">
@@ -51,15 +51,16 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end loader container-->
+    </div><!-- end loader container-->
+
+    <!--image container-->
     <div class="container" id="imageContainer" align="center">
         <img class="materialboxed responsive-img" id="coverPic">
         <div class="profilePicContainer">
             <img class="materialboxed responsive-img profilePic hide-on-small-only">
             <img class="materialboxed responsive-img circle profilePic hide-on-med-and-up">
         </div>
-    </div>
+    </div><!--end iamge container-->
     <br>
     <br>
     <br>
@@ -69,32 +70,33 @@
 
     <div class="container">
         <div class="row card-panel">
+            <!-- column 1 (for large devices)-->
             <div class="col hide-on-med-and-down m3">
-                <!-- column 1-->
                 <ul class="table-of-contents">
                     <li><a href="#overviewData" class="collection-item active" id="overview">Overview</a>
                     </li>
-                    <li><a href="#workAndEducationData" class="collection-item" id="workAndEducation">Education</a>
+                    <li><a href="#educationData" class="collection-item" id="education">Education</a>
                     </li>
                     <li><a href="#basicInfoData" class="collection-item" id="basicInfo">Basic Info</a>
                     </li>
                     <li><a href="#relationshipData" class="collection-item" id="relationship">Relationship</a>
                     </li>
                 </ul>
-            </div>
-            <!-- end column 1-->
+            </div><!-- end column 1(for large devices)-->
+            <!-- column 1(for mediumm devices)-->
             <div class="col s12 hide-on-large-only hide-on-small-only">
-                <ul id="tabs-swipe-demo" class="tabs">
+                <ul class="tabs">
                     <li class="tab col s3"><a class="active" href="#overviewData">Overview</a>
                     </li>
-                    <li class="tab col s3"><a href="#workAndEducationData">Education</a>
+                    <li class="tab col s3"><a href="#educationData">Education</a>
                     </li>
                     <li class="tab col s3"><a href="#basicInfoData">Basic Info</a>
                     </li>
                     <li class="tab col s3"><a href="#relationshipData">Relationship</a>
                     </li>
                 </ul>
-            </div>
+            </div><!-- end column 1(for medium devices)-->
+            <!-- column 1(for small devices)-->
             <div>
                 <ul class="collapsible hide-on-med-and-up data" data-collapsible="accordion">
                     <li>
@@ -148,12 +150,12 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div><!-- end column 1(for small devices)-->
 
+            <!-- column 2-->
             <div class="col s9 data">
-                <!-- column 2-->
+                <!--column 2 row overview-->
                 <div class="row hide-on-small-only" id="overviewData">
-                    <!--column 2 row overview-->
                     <div class="section">
                         <blockquote>
                             <p class="flow-text">Overview</p>
@@ -170,10 +172,9 @@
                         <div class="section email"></div>
                         <div class="section bDay"></div>
                     </div>
-                </div>
-                <!--end column 2 row overview-->
-                <div class="row hide-on-small-only" id="workAndEducationData">
-                    <!--column 2 row workAndEducationData-->
+                </div><!--end column 2 row overview-->
+                <!--column 2 row education-->
+                <div class="row hide-on-small-only" id="educationData"> 
                     <div class="section">
                         <blockquote>
                             <p class="flow-text">Education</p>
@@ -185,10 +186,9 @@
                     <div class="divider"></div>
                     <div class="section highSchool">
                     </div>
-                </div>
-                <!--end column 2 row workAndEducationData-->
+                </div><!--end column 2 row education-->
+                <!--column 2 row basicInfo-->
                 <div class="row hide-on-small-only" id="basicInfoData">
-                    <!--column 2 row basicInfo-->
                     <div class="section">
                         <blockquote>
                             <p class="flow-text">Basic Information</p>
@@ -205,8 +205,8 @@
                         <div class="section dob"></div>
                         <div class="section gender"></div>
                     </div>
-                </div>
-                <!--end column 2 row basicInfo-->
+                </div><!--end column 2 row basicInfo-->
+                <!--column 2 relationship-->
                 <div class="row hide-on-small-only" id="relationshipData">
                     <div class="section">
                         <blockquote>
@@ -216,13 +216,10 @@
                     </div>
                     <div class="section relationshipStatus">
                     </div>
-                </div>
-            </div>
-            <!-- end column 2-->
-        </div>
-        <!-- end row-->
-    </div>
-    <!-- end container-->
+                </div><!--end column 2 relationship-->
+            </div><!-- end column 2-->
+        </div><!-- end row-->
+    </div><!-- end container-->
 
     <footer class="page-footer">
         <div class="container">
